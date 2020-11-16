@@ -152,5 +152,11 @@
   <ItemGroup>
     <None Include="Resources\Zombie.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\creepy-background-daniel_simon.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Piano_brokencrash-Brandondorf-1164520478.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

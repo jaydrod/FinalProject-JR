@@ -61,6 +61,15 @@ namespace FinalProject.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream creepy_background_daniel_simon {
+            get {
+                return ResourceManager.GetStream("creepy_background_daniel_simon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap FinalProjectGameOverScreen {
@@ -117,6 +126,15 @@ namespace FinalProject.Properties {
             get {
                 object obj = ResourceManager.GetObject("MainCharecter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Piano_brokencrash_Brandondorf_1164520478 {
+            get {
+                return ResourceManager.GetStream("Piano_brokencrash_Brandondorf_1164520478", resourceCulture);
             }
         }
         

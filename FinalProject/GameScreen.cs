@@ -29,7 +29,8 @@ namespace FinalProject
         public Image ghost = Properties.Resources.Ghost;
         public Image vampire = Properties.Resources.Vampire;
         Hero hero = new Hero(5,5,10,22,7,1);
-
+        SoundPlayer player = new SoundPlayer(Properties.Resources.creepy_background_daniel_simon);
+        SoundPlayer dead = new SoundPlayer(Properties.Resources.Piano_brokencrash_Brandondorf_1164520478); 
         public GameScreen()
         {
             InitializeComponent();
@@ -44,7 +45,8 @@ namespace FinalProject
             MonsterClass m2 = new MonsterClass(30, 410, 20, 7, ghost); 
             monsters.Add(m);
             monsters.Add(m1);
-            monsters.Add(m2); 
+            monsters.Add(m2);
+            player.Play();
         }
 
     
@@ -94,6 +96,7 @@ namespace FinalProject
 
         private void GameScreen_Enter(object sender, EventArgs e)
         {
+            leftArrowDown = rightArrowDown = upArorrowDown = downArrowDown = false;
             Gametimer.Enabled = true; 
         }
 
@@ -101,7 +104,8 @@ namespace FinalProject
         {
             Form1.timer++;
             x = hero.x;
-            y = hero.y; 
+            y = hero.y;
+           
          
             //update hero location 
             if (leftArrowDown)
@@ -136,9 +140,11 @@ namespace FinalProject
             //see if exit button is pressed 
             if (exitButtonDown)
             {
-                Gametimer.Enabled = false; 
+                Gametimer.Enabled = false;
+                Form f = this.FindForm(); 
                 PauseScreen cs = new PauseScreen();
-                this.Controls.Add(cs);
+                f.Controls.Add(cs);
+                cs.BringToFront(); 
             }
             Rectangle heroRec = new Rectangle(hero.x, hero.y, hero.width, hero.height);
             foreach (Block b in blocks)
@@ -163,9 +169,9 @@ namespace FinalProject
                 Rectangle monstRect = new Rectangle(monster.x, monster.y, monster.size, monster.size); 
                 if (heroRec.IntersectsWith(monstRect))
                 {
+                    dead.Play(); 
                     lives--;
                     
- 
                     GameOverScreen cs = new GameOverScreen();
 
                     Form f = this.FindForm();
